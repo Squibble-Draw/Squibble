@@ -1,12 +1,46 @@
 :root {
-
+  font-size: 17px;
+    
 }
-body {
 
+* {
+    outline: black solid 4px;
+}
+
+body {
+  height: auto;
   margin: 0;
 }
 
 .page-container {
-    outline: black solid 4px;
-    height: 95vh;
+    width: 100%; /* temporary */    
+    height: auto;
 }
+
+.drawings {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  margin-top: 6rem;
+  background: blue;
+}
+.drawing {
+  width: 15rem;
+  height: 15rem;
+  background: green;
+  border-radius: 2rem;
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+  overflow: hidden;
+}
+.scroll-bar {
+    width: 6rem;
+    height: 100vh;
+    background: red;
+}
+
