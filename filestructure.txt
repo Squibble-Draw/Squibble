@@ -1,0 +1,9 @@
+|-- .gitignore
+|-- LICENSE
+|-- public
+    |-- asset.png
+|-- README.md
+|-- src
+    |-- index.css
+    |-- index.html
+    |-- index.js
