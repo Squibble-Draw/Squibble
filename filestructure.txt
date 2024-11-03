@@ -2,6 +2,7 @@
 |-- LICENSE
 |-- public
     |-- asset.png
+    |-- king david.png
 |-- README.md
 |-- src
     |-- index.css
