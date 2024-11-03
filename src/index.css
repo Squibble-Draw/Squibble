@@ -2,5 +2,11 @@
 
 }
 body {
+
   margin: 0;
+}
+
+.page-container {
+    outline: black solid 4px;
+    height: 95vh;
 }
