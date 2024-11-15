@@ -4,31 +4,45 @@
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
-/*
+
 .color-picker{
     width: auto;
-    height: 50px;
+    height: 20px;
     position: fixed;
-    top: 1%;
+    bottom: 1%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    flex-wrap:wrap;
+    gap: 10px;
+    margin-top: 20px;
     align-items: center;
-    justify-content: space-around;
     transition: opacity .5s;
     padding: 10px;
     border-radius: 0px;
-
 }
-*/
 
-.color-picker:hover{
+.color-picker button{
+    border: none;
+    background: none;
+    padding: 10px;
     cursor: pointer;
-}
-button:hover{
-    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
 }
 
+.color-picker button img{
+    width: 50px;
+    height: 50px
+}
+
+.color-picker button:hover{
+    transform: scale(1.1);
+    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+/*
 .clr{
     height: 35px;
     width: 35px;
@@ -41,54 +55,33 @@ button:hover{
 }
 
 .clr:nth-child(1){
-    background-color: black;
+    
 }
 
 .clr:nth-child(2){
-    background-color: red;
+    
 }
 
 .clr:nth-child(3){
-    background-color: orange;
+    
 }
 
 .clr:nth-child(4){
-    background-color: yellow;
+    
 }
 
 .clr:nth-child(5){
-    background-color: green;
+    
 }
 
 .clr:nth-child(6){
-    background-color: blue;
+    
 }
 
 .clr:nth-child(7){
-    background-color: purple;
+   
 }
 
 .clr:nth-child(8){
-    background-color: white;
-}
-
-button{
-    border: none;
-    outline: none;
-    padding: .6em 1em;
-    border-radius: 3px;
-    background-color: black;
-    color: white;
-    border: 3px solid white;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.save{
-    background-color: blue;
-}
-
-.Pencils{
-    font-size: 40px;
-    padding-bottom: 15px;
-}
+   
+}*/
