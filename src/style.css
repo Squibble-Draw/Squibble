@@ -22,7 +22,7 @@
 
 .color-picker button img{
     width: 50px;
-    height: 80px
+    /* height: 80px */
 }
 
 .color-picker button:hover{
@@ -30,6 +30,9 @@
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
 
+.button-image {
+    width: 100%;
+}
 
 
 /*
