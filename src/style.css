@@ -22,7 +22,7 @@
 
 .color-picker button img{
     width: 50px;
-    height: 80px
+    height: 130px
 }
 
 .color-picker button:hover{
@@ -30,7 +30,30 @@
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
 
+.icon-button{
+    display: flex;
+    flex-wrap:wrap;
+    
+    
+    align-items: center;
+}
+.icon-button button{
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
+}
 
+.icon-button button img{
+    width: 55px;
+    height: 80px
+}
+
+.icon-button button:hover{
+    transform: scale(1.1);
+    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+}
 
 /*
 .clr{
