@@ -5,14 +5,34 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.color-picker{
+body{
     display: flex;
-    flex-wrap:wrap;
-    
-    
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.bottom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.pencils, .icons{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.color-picker button{
+
+
+.pencils button{
+    margin: 0 -13px;
     border: none;
     background: none;
     padding: 10px;
@@ -20,12 +40,21 @@
     transition:transorm .3s, box-shadow .3s;
 }
 
-.color-picker button img{
+.icons button{
+    margin: 0 5px;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
+}
+
+.pencils button img{
     width: 50px;
     height: 130px
 }
 
-.color-picker button:hover{
+.pencils button:hover{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
@@ -35,7 +64,7 @@
     flex-wrap:wrap;
     
     
-    align-items: center;
+    align-items: bottom center;
 }
 .icon-button button{
     border: none;
@@ -45,8 +74,8 @@
     transition:transorm .3s, box-shadow .3s;
 }
 
-.icon-button button img{
-    width: 55px;
+.icons button img{
+    width: 62px;
     height: 80px
 }
 
