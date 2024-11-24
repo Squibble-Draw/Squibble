@@ -74,3 +74,14 @@ body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
 }
+
+.scroll-bar img {
+  width: fit-content;
+}
+
+.scroll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

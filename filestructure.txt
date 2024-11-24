@@ -1,10 +1,38 @@
+|-- .github
+    |-- workflows
+        |-- jekyll-gh-pages.yml
 |-- .gitignore
 |-- LICENSE
-|-- public
-    |-- asset.png
-    |-- king david.png
 |-- README.md
 |-- src
     |-- index.css
     |-- index.html
     |-- index.js
+    |-- public
+        |-- asset.png
+        |-- coloringPage.html
+        |-- icons
+            |-- color-pens
+                |-- blue.png
+                |-- darker-blue.png
+                |-- darker-orange.png
+                |-- green.png
+                |-- light-blue.png
+                |-- light-green.png
+                |-- orange.png
+                |-- pink.png
+                |-- purple.png
+                |-- red.png
+                |-- yellow.png
+            |-- colors-icon.png
+            |-- eraser.png
+            |-- fill.png
+            |-- home.png
+            |-- redo.png
+            |-- undo.png
+        |-- king david.png
+        |-- squirrel-1.png
+        |-- squirrel-2.png
+        |-- squirrel-3.png
+        |-- squirrel-4.png
+        |-- style.css
