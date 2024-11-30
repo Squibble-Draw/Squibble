@@ -59,12 +59,47 @@ body{
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
 
-.icon-button{
-    display: flex;
-    flex-wrap:wrap;
-    
-    
-    align-items: bottom center;
+.eraser-icon {
+position: absolute;
+top: 10px;
+left: 10px;
+}
+
+.undo-icon {
+position: absolute;
+top: 10px;
+left: 60px;
+}
+
+.redo-icon {
+position: absolute;
+top: 10px;
+left: 110px;
+}
+
+.home-icon {
+position: absolute;
+top: 10px;
+left: 160px;
+}
+
+.fill-icon {
+position: absolute;
+top: 10px;
+left: 210px;
+}
+
+.zoom-in-icon {
+position: absolute;
+top: 10px;
+left: 260px;
+}
+
+.zoom-out-icon {
+position: absolute;
+top: 10px;
+left: 310px;
+
 }
 .icon-button button{
     border: none;
@@ -83,47 +118,3 @@ body{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
-
-/*
-.clr{
-    height: 35px;
-    width: 35px;
-    background-color: white;
-    border: radius 50%;border: 3px solid black;
-    transition: transform .5s;
-}
-.clr:hover{
-    transform: scale(1.2);
-}
-
-.clr:nth-child(1){
-    
-}
-
-.clr:nth-child(2){
-    
-}
-
-.clr:nth-child(3){
-    
-}
-
-.clr:nth-child(4){
-    
-}
-
-.clr:nth-child(5){
-    
-}
-
-.clr:nth-child(6){
-    
-}
-
-.clr:nth-child(7){
-   
-}
-
-.clr:nth-child(8){
-   
-}*/
