@@ -9,67 +9,76 @@
     <script src="coloringPage.js" defer></script>
   </head>
   <body>
-    <div class = "bottom-container"></div>
-      <div class="pencils">
-        <button class="color-picker" data-color="blue">
-          <img src="public/pens/blue.png" alt="Blue" />
-        </button>
-        <button class="color-picker" data-color="#00008b">
-          <img src="public/pens/darker-blue.png" alt="Darker Blue" />
-        </button>
-        <button class="color-picker" data-color="#ff8c00">
-          <img src="public/pens/darker-orange.png" alt="Darker Orange" />
-        </button>
-        <button class="color-picker" data-color="green">
-          <img src="public/pens/green.png" alt="Green" />
-        </button>
-        <button class="color-picker" data-color="#add8e6">
-          <img src="public/pens/light-blue.png" alt="Light Blue" />
-        </button>
-        <button class="color-picker" data-color="#90ee90">
-          <img src="public/pens/light-green.png" alt="Light Green" />
-        </button>
-        <button class="color-picker" data-color="orange">
-          <img src="public/pens/orange.png" alt="Orange" />
-        </button>
-        <button class="color-picker" data-color="pink">
-          <img src="public/pens/pink.png" alt="Pink" />
-        </button>
-        <button class="color-picker" data-color="purple">
-          <img src="public/pens/purple.png" alt="Purple" />
-        </button>
-        <button class="color-picker" data-color="yellow">
-          <img src="public/pens/yellow.png" alt="Yellow" />
-        </button>
-        <button class="color-picker" data-color="red">
-          <img src="public/pens/red.png" alt="Red" />
-        </button>
-      </div>
+    <!--ADD ICONS-->
+    <div class = "icons">
+      <button class="icon-button" data-icon="undo">
+        <img src="public/icons/undo.png" alt="undo" />
+      </button>
+      <button class="icon-button" data-icon="redo">
+        <img src="public/icons/redo.png" alt="redo" />
+      </button>
+      <button class="icon-button" data-icon="home">
+        <img src="public/icons/home.png" alt="home" />
+      </button>
+      <button class="icon-button" data-icon="zoom_in">
+        <img src="public/icons/red zoom in_00000.png" alt="zoom_in" />
+        <button>
+      <button class="icon-button" data-icon="zoom_out">
+        <img src="public/icons/red zoom out_00000.png" alt="zoom_out" />
+      </button>
+    </div>
+
+    <div class= "bottom-icons">
+      <button class="icon-button" data-icon="eraser">
+        <img src="public/icons/eraser.png" alt="Eraser" />
+      </button>
+      <button class="icon-button" data-icon="fill">
+        <img src="public/icons/fill.png" alt="Fill" />
+      </button>
+    </div>
+  </body>
+
+
     <div class="image-container">
       <img src="" alt="" id="background" class="background-image">
       <canvas id="drawingCanvas"></canvas>
     </div>
   
-      <!--ADD ICONS-->
-      <div class = "icons">
-        <button class="icon-button" data-icon="eraser">
-          <img src="public/icons/eraser.png" alt="Eraser" />
+
+      <!--<div class = "bottom-container"></div>-->
+      <div class="pencils">
+        <button class="color-picker" data-color="red">
+          <img src="public/pens/red.png" alt="Red" />
         </button>
-        <button class="icon-button" data-icon="undo">
-          <img src="public/icons/undo.png" alt="Undo" />
+        <button class="color-picker" data-color="#ff8c00">
+          <img src="public/pens/darker-orange.png" alt="Darker Orange" />
         </button>
-        <button class="icon-button" data-icon="redo">
-          <img src="public/icons/redo.png" alt="Redo" />
+        <button class="color-picker" data-color="orange">
+          <img src="public/pens/orange.png" alt="Orange" />
         </button>
-        <button class="icon-button" data-icon="home">
-          <img src="public/icons/home.png" alt="home" />
+        <button class="color-picker" data-color="yellow">
+          <img src="public/pens/yellow.png" alt="Yellow" />
         </button>
-        <button class="icon-button" data-icon="fill">
-          <img src="public/icons/fill.png" alt="fill" />
-        <button class="icon-button" data-icon="zoom_in">
-          <img src="public/icons/red zoom in_00000.png" alt="zoom_in" />
-        <button class="icon-button" data-icon="zoom_out">
-          <img src="public/icons/red zoom out_00000.png" alt="zoom_out" />
+        <button class="color-picker" data-color="green">
+          <img src="public/pens/green.png" alt="Green" />
+        </button>
+        <button class="color-picker" data-color="#90ee90">
+          <img src="public/pens/light-green.png" alt="Light Green" />
+        </button>
+        <button class="color-picker" data-color="#00008b">
+          <img src="public/pens/darker-blue.png" alt="Darker Blue" />
+        </button>
+        <button class="color-picker" data-color="blue">
+          <img src="public/pens/blue.png" alt="Blue" />
+        </button>
+        <button class="color-picker" data-color="#add8e6">
+          <img src="public/pens/light-blue.png" alt="Light Blue" />
+        </button>
+        <button class="color-picker" data-color="purple">
+          <img src="public/pens/purple.png" alt="Purple" />
+        </button>
+        <button class="color-picker" data-color="pink">
+          <img src="public/pens/pink.png" alt="Pink" />
         </button>
       </div>
     </div>

@@ -49,6 +49,16 @@ body{
     transition:transorm .3s, box-shadow .3s;
 }
 
+.bottom-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 .pencils button img{
     width: 50px;
     height: 130px
@@ -59,48 +69,36 @@ body{
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
 
-.eraser-icon {
-position: absolute;
-top: 10px;
-left: 10px;
-}
-
-.undo-icon {
+.undo{
 position: absolute;
 top: 10px;
 left: 60px;
 }
 
-.redo-icon {
+.redo{
 position: absolute;
 top: 10px;
 left: 110px;
 }
 
-.home-icon {
+.home{
 position: absolute;
 top: 10px;
 left: 160px;
 }
 
-.fill-icon {
+.zoom-in{
 position: absolute;
 top: 10px;
 left: 210px;
 }
 
-.zoom-in-icon {
+.zoom-out{
 position: absolute;
 top: 10px;
 left: 260px;
 }
 
-.zoom-out-icon {
-position: absolute;
-top: 10px;
-left: 310px;
-
-}
 .icon-button button{
     border: none;
     background: none;
@@ -109,7 +107,7 @@ left: 310px;
     transition:transorm .3s, box-shadow .3s;
 }
 
-.icons button img{
+.icons button img, .bottom-icons .icon-button img{
     width: 62px;
     height: 80px
 }
@@ -118,3 +116,14 @@ left: 310px;
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
+
+.eraser{
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+}
+.fill{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}   
