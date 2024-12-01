@@ -94,6 +94,9 @@ function redrawCanvas() {
 
 document.getElementById('undo').addEventListener('click', undoLastLine);
 document.getElementById('redo').addEventListener('click', redoLastLine);
+document.getElementById('home').addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
 
 canvas.addEventListener('mouseup', () => {
     drawing = false;
