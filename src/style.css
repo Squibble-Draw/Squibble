@@ -14,6 +14,14 @@ body{
     margin: 0;
 }
 
+/*.image-container{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+*/
 .bottom-container{
     display: flex;
     justify-content: center;
@@ -41,7 +49,7 @@ body{
 }
 
 .icons button{
-    margin: 0 5px;
+    margin: 0 30px;
     border: none;
     background: none;
     padding: 10px;
@@ -49,20 +57,21 @@ body{
     transition:transorm .3s, box-shadow .3s;
 }
 
-.bottom-icons{
+/*.bottom-icons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 10px;
     width: 100%;
     position: absolute;
     bottom: 0;
-}
+}*/
 
-.pencils button img{
+.pencils img{
     width: 50px;
     height: 130px
 }
+
 
 .pencils button:hover{
     transform: scale(1.1);
@@ -112,18 +121,13 @@ left: 260px;
     height: 80px
 }
 
-.icon-button button:hover{
+.icons button:hover{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
 
-.eraser{
-    position: absolute;
-    bottom: 10px;
-    left: 100px;
+.eraser-icon img, .fill-icon img{
+    width: 62px;
+    height: 95px;
 }
-.fill{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}   
+ 
