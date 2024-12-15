@@ -51,3 +51,21 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+
+#home {
+   position: fixed; 
+   left: 0%;
+}
+
+#zoom_in {
+    position: fixed;
+    right: 0%;
+}
+
+#zoom_out {
+    position: absolute;
+    right: 0%;
+    bottom: 72%;
+}
+
+
