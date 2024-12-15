@@ -32,7 +32,7 @@ body{
     bottom: 0;
 }
 
-.pencils, .icons{
+.bottom-icons, .icons{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ body{
 }
 
 
-.pencils button{
+.bottom-icons button{
     margin: 0 -13px;
     border: none;
     background: none;
@@ -68,13 +68,13 @@ body{
     bottom: 0;
 }*/
 
-.pencils img{
+.bottom-icons img{
     width: 50px;
     height: 130px
 }
 
 
-.pencils button:hover{
+.bottom-icons button:hover{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
 }
