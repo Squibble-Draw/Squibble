@@ -132,3 +132,11 @@ left: 260px;
     height: 95px;
 }
  
+
+@media (min-width:600px) and (max-width:900px)
+{
+    .coloring-page{
+        grid-template-columns: repeat(2,1fr);
+        padding: 20px;
+    }
+}
