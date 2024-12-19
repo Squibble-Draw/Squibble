@@ -140,3 +140,58 @@ left: 260px;
         padding: 20px;
     }
 }
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        justify-content: space-between; /* Adjust content distribution */
+    }
+
+    .bottom-container {
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        padding: 5px;
+    }
+
+    .bottom-icons button, .icons button {
+        margin: 5px; /* Adjust spacing between buttons */
+        padding: 8px; /* Reduce padding for smaller buttons */
+    }
+
+    .bottom-icons img, .icons img {
+        width: 40px; /* Adjust icon size for smaller screens */
+        height: 100px;
+    }
+
+    .undo, .redo, .home, .zoom-in, .zoom-out {
+        position: static; /* Avoid overlapping positions */
+        margin: 5px;
+    }
+
+    .eraser-icon img, .fill-icon img {
+        width: 50px; /* Scale icons */
+        height: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .undo, .redo, .home, .zoom-in, .zoom-out {
+        position: relative; /* Make them part of the flow */
+        display: inline-block; /* Align in a single row */
+    }
+
+    .icon-button button {
+        margin: 0 5px; /* Adjust spacing */
+    }
+}
+
+
+@media (max-width: 600px) {
+    * {
+        overflow: visible;
+    }
+
+    .bottom-container, .bottom-icons {
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+}
+
