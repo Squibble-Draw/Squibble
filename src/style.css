@@ -132,66 +132,24 @@ left: 260px;
     height: 95px;
 }
  
-
-@media (min-width:600px) and (max-width:900px)
-{
-    .coloring-page{
-        grid-template-columns: repeat(2,1fr);
-        padding: 20px;
-    }
-}
-
-@media (max-width: 600px) {
+/*for tablet view*/
+@media only screen and (min-width: 720px) and (max-width: 991px) {
     body {
-        flex-direction: column;
-        justify-content: space-between; /* Adjust content distribution */
+      font-size: 14px;
+      width: 90%;
+      margin: auto;
     }
-
-    .bottom-container {
-        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-        padding: 5px;
+    zoom-out.button-icons{
+        top: 40px; 
     }
+  }
 
-    .bottom-icons button, .icons button {
-        margin: 5px; /* Adjust spacing between buttons */
-        padding: 8px; /* Reduce padding for smaller buttons */
+ 
+  /* styles for mobile devices 
+@media only screen and (max-width: 767px) {
+    body {
+      font-size: 12px;
+      width: 100%;
+      margin: 0;
     }
-
-    .bottom-icons img, .icons img {
-        width: 40px; /* Adjust icon size for smaller screens */
-        height: 100px;
-    }
-
-    .undo, .redo, .home, .zoom-in, .zoom-out {
-        position: static; /* Avoid overlapping positions */
-        margin: 5px;
-    }
-
-    .eraser-icon img, .fill-icon img {
-        width: 50px; /* Scale icons */
-        height: 70px;
-    }
-}
-
-@media (max-width: 600px) {
-    .undo, .redo, .home, .zoom-in, .zoom-out {
-        position: relative; /* Make them part of the flow */
-        display: inline-block; /* Align in a single row */
-    }
-
-    .icon-button button {
-        margin: 0 5px; /* Adjust spacing */
-    }
-}
-
-
-@media (max-width: 600px) {
-    * {
-        overflow: visible;
-    }
-
-    .bottom-container, .bottom-icons {
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-    }
-}
-
+  }*/
