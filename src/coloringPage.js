@@ -10,11 +10,22 @@ colorButtons.forEach(button => {
     });
 });
 
+// Eraser tool functionality
 const eraser = document.getElementById('eraser');
 eraser.addEventListener('click', () => {
-    changeColor('#0000'); // Paint transparent color (idk if this works)
-}
-);
+    drawing = false; // Stop any ongoing drawing
+    ctx.globalCompositeOperation = 'destination-out'; // Activate erase mode
+    ctx.lineWidth = 10; // Adjust eraser size to your preference
+});
+
+// Reset to normal drawing when a color is selected
+colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const color = button.getAttribute('data-color');
+        ctx.globalCompositeOperation = 'source-over'; // Return to normal drawing
+        changeColor(color);
+    });
+});
 
 function getQueryString() {
     const queryString = window.location.search;
@@ -46,19 +57,31 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 canvas.addEventListener('mousedown', (e) => {
-    undoLines = [];
+    undoLines = []; // Clear the redo stack whenever a new stroke starts
     drawing = true;
-    ctx.lineWidth = 10; // Set the brush size here
+    ctx.lineWidth = 10; // Set the brush or eraser size
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY);
-    lines.push([{ x: e.offsetX, y: e.offsetY, color: ctx.strokeStyle }]);
+    
+    // Record the current stroke, including whether it's an eraser
+    lines.push([{
+        x: e.offsetX,
+        y: e.offsetY,
+        color: ctx.strokeStyle,
+        operation: ctx.globalCompositeOperation // Tracks if it's an eraser
+    }]);
 });
 
 canvas.addEventListener('mousemove', (e) => {
     if (drawing) {
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
-        lines[lines.length - 1].push({ x: e.offsetX, y: e.offsetY, color: ctx.strokeStyle });
+        lines[lines.length - 1].push({
+            x: e.offsetX,
+            y: e.offsetY,
+            color: ctx.strokeStyle,
+            operation: ctx.globalCompositeOperation // Tracks the operation for this point
+        });
     }
 });
 
@@ -77,8 +100,9 @@ function redoLastLine() {
 }
 
 function redrawCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    lines.forEach((line_segments, _) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas
+
+    lines.forEach(line_segments => {
         ctx.beginPath();
         line_segments.forEach((line, index) => {
             if (index === 0) {
@@ -86,10 +110,15 @@ function redrawCanvas() {
             } else {
                 ctx.lineTo(line.x, line.y);
             }
+            
             ctx.strokeStyle = line.color;
+            ctx.globalCompositeOperation = line.operation || 'source-over'; // Use the saved compositing mode
             ctx.stroke();
         });
     });
+
+    // Reset to normal drawing mode after redraw
+    ctx.globalCompositeOperation = 'source-over';
 }
 
 let zoomLevel = 1;
