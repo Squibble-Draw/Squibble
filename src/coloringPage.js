@@ -92,11 +92,25 @@ function redrawCanvas() {
     });
 }
 
+let zoomLevel = 1;
+
+const zoomIn = () => {
+    zoomLevel = Math.min(zoomLevel + 0.25, 5);
+    coloringPage.style.transform = `scale(${zoomLevel})`;
+}
+
+const zoomOut = () => {
+    zoomLevel = Math.max(zoomLevel - 0.25, 0.5);
+    coloringPage.style.transform = `scale(${zoomLevel})`;
+}
+
 document.getElementById('undo').addEventListener('click', undoLastLine);
 document.getElementById('redo').addEventListener('click', redoLastLine);
 document.getElementById('home').addEventListener('click', () => {
     window.location.href = 'index.html';
 });
+document.getElementById('zoom_in').addEventListener('click', zoomIn);
+document.getElementById('zoom_out').addEventListener('click', zoomOut);
 
 canvas.addEventListener('mouseup', () => {
     drawing = false;
