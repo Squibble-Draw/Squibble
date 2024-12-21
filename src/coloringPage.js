@@ -1,8 +1,27 @@
+const img = getQueryString().get('img');
+const colorButtons = document.querySelectorAll('.color-picker');
+
+const coloringPage = document.getElementById('background');
+coloringPage.src = "public/" + img;
+
+const canvas = document.getElementById('drawingCanvas');
+const ctx = canvas.getContext('2d');
+
+const eraser = document.getElementById('eraser');
+
+// Drawing functionality
+let drawing = false;
+let lines = [];
+let undoLines = [];
+
+// Zoom functionality
+let zoomLevel = 1;
+
+
 function changeColor(color) {
     ctx.strokeStyle = color;
 }
 
-const colorButtons = document.querySelectorAll('.color-picker');
 colorButtons.forEach(button => {
     button.addEventListener('click', () => {
     const color = button.getAttribute('data-color');
@@ -11,7 +30,6 @@ colorButtons.forEach(button => {
 });
 
 // Eraser tool functionality
-const eraser = document.getElementById('eraser');
 eraser.addEventListener('click', () => {
     drawing = false; // Stop any ongoing drawing
     ctx.globalCompositeOperation = 'destination-out'; // Activate erase mode
@@ -32,20 +50,6 @@ function getQueryString() {
     const urlParams = new URLSearchParams(queryString);
     return urlParams;
 }
-
-const img = getQueryString().get('img');
-
-const coloringPage = document.getElementById('background');
-coloringPage.src = "public/" + img;
-
-const canvas = document.getElementById('drawingCanvas');
-const ctx = canvas.getContext('2d');
-
-// Drawing functionality
-let drawing = false;
-
-let lines = [];
-let undoLines = [];
 
 // Adjust canvas size to match container
 function resizeCanvas() {
@@ -121,14 +125,12 @@ function redrawCanvas() {
     ctx.globalCompositeOperation = 'source-over';
 }
 
-let zoomLevel = 1;
-
-const zoomIn = () => {
+function zoomIn() {
     zoomLevel = Math.min(zoomLevel + 0.25, 5);
     coloringPage.style.transform = `scale(${zoomLevel})`;
 }
 
-const zoomOut = () => {
+function zoomOut() {
     zoomLevel = Math.max(zoomLevel - 0.25, 0.5);
     coloringPage.style.transform = `scale(${zoomLevel})`;
 }
