@@ -1,0 +1,15 @@
+{
+  "name": "TCUGM Coloring App",
+  "short_name": "Squibble",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "public/squirrel-3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

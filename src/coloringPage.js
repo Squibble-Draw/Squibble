@@ -1,20 +1,18 @@
-const img = getQueryString().get('img');
-const colorButtons = document.querySelectorAll('.color-picker');
-
-const coloringPage = document.getElementById('background');
-coloringPage.src = "public/" + img;
-
 const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
 
+const img = getQueryString().get('img');
+const coloringPage = document.getElementById('background');
+coloringPage.src = "public/" + img;
+
+const colorButtons = document.querySelectorAll('.color-picker');
 const eraser = document.getElementById('eraser');
 
-// Drawing functionality
 let drawing = false;
+let fillMode = false;
+let currentColor = '#000000';
 let lines = [];
 let undoLines = [];
-
-// Zoom functionality
 let zoomLevel = 1;
 
 
@@ -76,6 +74,7 @@ canvas.addEventListener('mousedown', (e) => {
     }]);
 });
 
+// Continue drawing on mouse move
 canvas.addEventListener('mousemove', (e) => {
     if (drawing) {
         ctx.lineTo(e.offsetX, e.offsetY);
