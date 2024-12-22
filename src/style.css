@@ -70,13 +70,14 @@ body{
 
 .bottom-icons img{
     width: 50px;
-    height: 130px
+    height: 125px
 }
 
 
 .bottom-icons button:hover{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
 }
 
 .undo{
@@ -125,6 +126,7 @@ left: 260px;
 .icons button:hover{
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
 }
 
 .eraser-icon img, .fill-icon img{
@@ -132,17 +134,80 @@ left: 260px;
     height: 95px;
 }
  
-/*for tablet view*/
-@media only screen and (min-width: 720px) and (max-width: 991px) {
+
+  /* Tablet view (iPad Mini)*/ 
+@media only screen and (min-width: 800px) and (max-width: 991px) {
     body {
-      font-size: 14px;
-      width: 90%;
-      margin: auto;
+        font-size: 14px;
+        width: 90%;
+        margin: auto;
     }
-    .zoom-out{
-        top: 40px; 
+
+    .icons button{
+        transition: transform 0.3s, box-shadow 0.3s;
     }
-  }
+
+    .bottom-icons button {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .bottom-icons button:hover{
+        transform: scale(1.1);
+        box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+        font-weight: bold;
+    }
+
+    .icons button:hover{
+        transform: scale(1.1); 
+        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }
+
+    .icons button img{
+        width: 62px; 
+        height: 80px;
+    }
+
+    .bottom-icons button img {
+        width: 62px; 
+        height: 120px;
+    }
+
+    .eraser-icon img,
+    .fill-icon img {
+        width: 62px;
+        height: 95px;
+    }
+
+    /*.color-picker img{
+        width: 50px;
+        height: 130px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .color-picker:hover img{
+        transform: scale(1.1);
+        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
+    }*/
+
+    #zoom_out {
+        position: absolute;
+        right: 0%;
+        bottom: 79%;
+    }
+   /* FIX KIND DAVID IMAGE WIDTH 
+    .image-container {
+        position: relative;
+        width: 90%;
+        height: 75%;
+    }
+    .background-image {
+        width: 90%;
+        height: 100%;
+        object-fit: contain;
+    }*/
+}
+
 
  
   /* styles for mobile devices 
