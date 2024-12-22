@@ -10,7 +10,6 @@ const eraser = document.getElementById('eraser');
 
 let drawing = false;
 let fillMode = false;
-let currentColor = '#000000';
 let lines = [];
 let undoLines = [];
 let zoomLevel = 1;

@@ -11,6 +11,78 @@ body {
     height: 100vh;
 }
 
+.bottom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-icons, .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* temporary fix so you can select the pencils properly */
+}
+
+
+.bottom-icons button{
+    margin: 0 -13px;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
+}
+
+.icons button{
+    margin: 0 30px;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
+}
+
+.bottom-icons img{
+    width: 50px;
+    height: 125px
+}
+
+
+.bottom-icons button:hover{
+    transform: scale(1.1);
+    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.icon-button button{
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:transorm .3s, box-shadow .3s;
+}
+
+.icons button img, .bottom-icons .icon-button img{
+    width: 62px;
+    height: 80px
+}
+
+.icons button:hover{
+    transform: scale(1.1);
+    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.eraser-icon img, .fill-icon img{
+    width: 62px;
+    height: 95px;
+}
+
 .image-container {
     position: relative;
     width: 100%;
@@ -53,13 +125,14 @@ button {
 }
 
 #home {
-   position: fixed; 
-   left: 0%;
+    position: fixed;
+    left: 0%;
 }
 
 #zoom_in {
-    position: fixed;
+    position: absolute;
     right: 0%;
+    top:0%;
 }
 
 #zoom_out {
@@ -68,16 +141,106 @@ button {
     bottom: 79%;
 }
 
-#redo{
+/* #redo{
     position: absolute;
     bottom: 3%;
     left: 11%;
-}
+} */
 
-#undo{
+/* #undo{
     position: absolute;
     bottom: 3%;
     left: 5%;
+} */
+
+/* Tablet view (iPad Mini)*/ 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .icons button{
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .bottom-icons button {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .bottom-icons button:hover{
+        transform: scale(1.1);
+        box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+        font-weight: bold;
+    }
+
+    .icons button:hover{
+        transform: scale(1.1); 
+        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }
+
+    .icons button img{
+        width: 62px; 
+        height: 80px;
+    }
+
+    .bottom-icons button img {
+        width: 60px; 
+        height: 123px;
+    }
+
+    /*.eraser-icon
+    {
+        display: flex;
+        width: 110px;
+        height: 125px;
+    }
+    .fill-icon{
+        display: flex;
+        width: 110px;
+        height: 125px;
+    }*/
+
+
+    .zoom_out-icon img {
+        position: fixed;
+        display: flex;
+        right: 0%;
+        bottom: 78%;
+    }
+
+    .zoom_in-icon img{
+        position: fixed;
+        display: flex;
+        right: 0%;
+        bottom: 87%;
+    }
+
+    #home{
+        position:fixed;
+        display: flex;
+        left: 0%;
+        bottom: 87%;
+        width: 90px;
+        height: 90px;
+    }
+
+    /* #redo{
+        position: fixed;
+        top: -77%;
+        right: 0%;
+    } */
 }
 
 
+ 
+  /* styles for mobile devices 
+@media only screen and (max-width: 767px) {
+    body {
+      font-size: 12px;
+      width: 100%;
+      margin: 0;
+    }
+  }*/
