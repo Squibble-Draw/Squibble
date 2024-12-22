@@ -1,44 +1,44 @@
 const CACHE_NAME = "drawing-app-cache-v1";
 const urlsToCache = [
   "/index.html",
-  "/coloringPage.css",
-  "/coloringPage.js",
   "/style.css",
-  "/public/squirrel-3.png"
+  "/index.js",
+  "/public/squirrel-3.png",
+  "/public/king-david.png",
+  "/public/david-and-goliath.png",
+  "/public/noahs-ark.png",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("Opened cache");
       return cache.addAll(urlsToCache);
     })
   );
 });
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Cache hit - return the response from the cache
-      if (response) {
-        return response;
-      }
-      return fetch(event.request);
-    })
-  );
-});
-
-self.addEventListener("activate", (event) => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then((cacheNames) =>
-      Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      )
-    )
-  );
+  if (event.request.destination === "image") {
+    // Cache on demand for images
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return (
+          response ||
+          fetch(event.request).then((fetchedResponse) => {
+            return caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, fetchedResponse.clone());
+              return fetchedResponse;
+            });
+          })
+        );
+      })
+    );
+  } else {
+    // Handle other requests normally
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
