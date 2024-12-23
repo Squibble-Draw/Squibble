@@ -87,6 +87,44 @@ canvas.addEventListener('mousemove', (e) => {
     }
 });
 
+canvas.addEventListener('touchstart', (e) => {
+    undoLines = []; // Clear the redo stack whenever a new stroke starts
+    drawing = true;
+    ctx.lineWidth = 10; // Set the brush or eraser size
+    ctx.beginPath();
+    ctx.moveTo(e.touches[0].clientX, e.touches[0].clientY);
+    
+    // Record the current stroke, including whether it's an eraser
+    lines.push([{
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+        color: ctx.strokeStyle,
+        operation: ctx.globalCompositeOperation // Tracks if it's an eraser
+    }]);
+
+    console.log(lines);
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    if (drawing) {
+        const rect = canvas.getBoundingClientRect(); // Get canvas position and dimensions
+        const x = e.touches[0].clientX - rect.left; // Adjust X coordinate
+        const y = e.touches[0].clientY - rect.top;  // Adjust Y coordinate
+        
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        lines[lines.length - 1].push({
+            x: x, // Adjusted X coordinate
+            y: y, // Adjusted Y coordinate
+            color: ctx.strokeStyle,
+            operation: ctx.globalCompositeOperation // Tracks the operation for this point
+        });
+
+        e.preventDefault(); // Prevent default touch event behavior (e.g., scrolling)
+    }
+});
+
 function undoLastLine() {
     if (lines.length > 0) {
         undoLines.push(lines.pop());
