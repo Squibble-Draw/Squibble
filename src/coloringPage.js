@@ -87,42 +87,55 @@ canvas.addEventListener('mousemove', (e) => {
     }
 });
 
+// Touch start event
 canvas.addEventListener('touchstart', (e) => {
-    undoLines = []; // Clear the redo stack whenever a new stroke starts
     drawing = true;
-    ctx.lineWidth = 10; // Set the brush or eraser size
-    ctx.beginPath();
-    ctx.moveTo(e.touches[0].clientX, e.touches[0].clientY);
-    
-    // Record the current stroke, including whether it's an eraser
-    lines.push([{
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-        color: ctx.strokeStyle,
-        operation: ctx.globalCompositeOperation // Tracks if it's an eraser
-    }]);
 
-    console.log(lines);
+    const rect = canvas.getBoundingClientRect(); // Get canvas position
+
+    // Adjust touch coordinates
+    const x = e.touches[0].clientX - rect.left;
+    const y = e.touches[0].clientY - rect.top;
+
+    ctx.lineWidth = 10; // Set the brush/eraser size
+    ctx.beginPath(); // Start a new path
+    ctx.moveTo(x, y); // Move to the touch position without drawing
+
+    // Record the starting point of the line
+    lines.push([{
+        x: x,
+        y: y,
+        color: ctx.strokeStyle,
+        operation: ctx.globalCompositeOperation // Tracks the operation for this point
+    }]);
 });
 
+// Touch move event
 canvas.addEventListener('touchmove', (e) => {
     if (drawing) {
-        const rect = canvas.getBoundingClientRect(); // Get canvas position and dimensions
-        const x = e.touches[0].clientX - rect.left; // Adjust X coordinate
-        const y = e.touches[0].clientY - rect.top;  // Adjust Y coordinate
-        
-        ctx.lineTo(x, y);
+        const rect = canvas.getBoundingClientRect(); // Get canvas position
+
+        // Adjust touch coordinates
+        const x = e.touches[0].clientX - rect.left;
+        const y = e.touches[0].clientY - rect.top;
+
+        ctx.lineTo(x, y); // Draw to the new position
         ctx.stroke();
 
+        // Record the new point of the line
         lines[lines.length - 1].push({
-            x: x, // Adjusted X coordinate
-            y: y, // Adjusted Y coordinate
+            x: x,
+            y: y,
             color: ctx.strokeStyle,
             operation: ctx.globalCompositeOperation // Tracks the operation for this point
         });
 
-        e.preventDefault(); // Prevent default touch event behavior (e.g., scrolling)
+        e.preventDefault(); // Prevent default touch interaction
     }
+});
+
+canvas.addEventListener('touchend', () => {
+    drawing = false;
 });
 
 function undoLastLine() {
