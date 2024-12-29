@@ -11,7 +11,7 @@ body {
     height: 100vh;
 }
 
-.bottom-container{
+.bottom-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,64 +21,67 @@ body {
     bottom: 0;
 }
 
-.bottom-icons, .icons{
+.bottom-icons,
+.icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* temporary fix so you can select the pencils properly */
+    z-index: 1;
+    /* temporary fix so you can select the pencils properly */
 }
 
-
-.bottom-icons button{
+.bottom-icons button {
     margin: 0 -13px;
     border: none;
     background: none;
     padding: 10px;
     cursor: pointer;
-    transition:transorm .3s, box-shadow .3s;
+    transition: transorm .3s, box-shadow .3s;
 }
 
-.icons button{
+.icons button {
     margin: 0 30px;
     border: none;
     background: none;
     padding: 10px;
     cursor: pointer;
-    transition:transorm .3s, box-shadow .3s;
+    transition: transorm .3s, box-shadow .3s;
 }
 
-.bottom-icons img{
+.bottom-icons img {
     width: 50px;
     height: 125px
 }
 
 
-.bottom-icons button:hover{
+.bottom-icons button:hover {
     transform: scale(1.1);
-    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
 
-.icon-button button{
+.icon-button button {
     border: none;
     background: none;
     padding: 10px;
     cursor: pointer;
-    transition:transorm .3s, box-shadow .3s;
+    transition: transorm .3s, box-shadow .3s;
 }
 
-.icons button img, .bottom-icons .icon-button img{
+.icons button img,
+.bottom-icons .icon-button img {
     width: 62px;
     height: 80px
 }
 
-.icons button:hover{
+.icons button:hover {
     transform: scale(1.1);
-    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
 
-.eraser-icon img, .fill-icon img{
+.eraser-icon img,
+.fill-icon img {
     width: 62px;
     height: 95px;
 }
@@ -124,36 +127,34 @@ button {
     transition: background-color 0.3s ease;
 }
 
-#home {
-    position: fixed;
-    left: 0%;
-}
+@media only screen and (min-width: 1025px) {
+    #zoom_out {
+        position: absolute;
+        right: 0%;
+        bottom: 70%;
+    }
 
-#zoom_in {
-    position: absolute;
-    right: 0%;
-    top:0%;
-}
-
-#zoom_out {
-    position: absolute;
-    right: 0%;
-    bottom: 70%;
-}
-
-/* #redo{
+    /* #redo{
     position: absolute;
     bottom: 3%;
     left: 11%;
 } */
 
-/* #undo{
+    /* #undo{
     position: absolute;
     bottom: 3%;
     left: 5%;
 } */
 
-/* Tablet view (iPad Mini)*/ 
+    /* styles for the selected size picker button */
+    .size-picker.selected {
+        border: 2px solid #000;
+        border-radius: 50%;
+    }
+
+}
+
+/* Tablet view (iPad Mini)*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     body {
         font-size: 14px;
@@ -161,7 +162,7 @@ button {
         margin: auto;
     }
 
-    .icons button{
+    .icons button {
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -169,25 +170,25 @@ button {
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .bottom-icons button:hover{
+    .bottom-icons button:hover {
         transform: scale(1.1);
-        box-shadow: 0.4px 8px rgba(0,0,0,0.2);
-        font-weight: bold;
-    }
-
-    .icons button:hover{
-        transform: scale(1.1); 
         box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
         font-weight: bold;
     }
 
-    .icons button img{
-        width: 62px; 
+    .icons button:hover {
+        transform: scale(1.1);
+        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }
+
+    .icons button img {
+        width: 62px;
         height: 85px;
     }
 
     .bottom-icons button img {
-        width: 60px; 
+        width: 60px;
         height: 125px;
     }
 
@@ -205,24 +206,15 @@ button {
 
 
     .zoom_out-icon img {
-        position: fixed;
         display: flex;
-        right: 0%;
-        bottom: 78%;
     }
 
-    .zoom_in-icon img{
-        position: fixed;
+    .zoom_in-icon img {
         display: flex;
-        right: 0%;
-        bottom: 87%;
     }
 
-    #home{
-        position:fixed;
+    #home {
         display: flex;
-        left: 0%;
-        bottom: 87%;
         width: 90px;
         height: 90px;
     }
@@ -232,15 +224,21 @@ button {
         top: -77%;
         right: 0%;
     } */
+
+    #zoom_in {
+        padding: 0;
+        width: 62px;
+        height: 80px;
+    }
+
+    #zoom_out {
+        padding: 0;
+        width: 62px;
+        height: 80px;
+    }
 }
 
-/* styles for the selected size picker button */
-.size-picker.selected {
-  border: 2px solid #000;
-  border-radius: 50%;
-}
- 
-  /* styles for mobile devices 
+/* styles for mobile devices 
 @media only screen and (max-width: 767px) {
     body {
       font-size: 12px;
