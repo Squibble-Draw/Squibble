@@ -30,7 +30,6 @@ colorButtons.forEach(button => {
 eraser.addEventListener('click', () => {
     drawing = false; // Stop any ongoing drawing
     ctx.globalCompositeOperation = 'destination-out'; // Activate erase mode
-    ctx.lineWidth = 10; // Adjust eraser size to your preference
 });
 
 // Reset to normal drawing when a color is selected
@@ -60,15 +59,15 @@ resizeCanvas();
 canvas.addEventListener('mousedown', (e) => {
     undoLines = []; // Clear the redo stack whenever a new stroke starts
     drawing = true;
-    ctx.lineWidth = 10; // Set the brush or eraser size
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY);
     
     // Record the current stroke, including whether it's an eraser
     lines.push([{
-        x: e.offsetX,
-        y: e.offsetY,
+        x: e.offsetX / canvas.width, // Normalize the coordinates
+        y: e.offsetY / canvas.height,
         color: ctx.strokeStyle,
+        size: ctx.lineWidth,
         operation: ctx.globalCompositeOperation // Tracks if it's an eraser
     }]);
 });
@@ -97,7 +96,6 @@ canvas.addEventListener('touchstart', (e) => {
     const x = e.touches[0].clientX - rect.left;
     const y = e.touches[0].clientY - rect.top;
 
-    ctx.lineWidth = 10; // Set the brush/eraser size
     ctx.beginPath(); // Start a new path
     ctx.moveTo(x, y); // Move to the touch position without drawing
 
@@ -158,13 +156,16 @@ function redrawCanvas() {
     lines.forEach(line_segments => {
         ctx.beginPath();
         line_segments.forEach((line, index) => {
+            const x = line.x * canvas.width;
+            const y = line.y * canvas.height;
             if (index === 0) {
-                ctx.moveTo(line.x, line.y);
+                ctx.moveTo(x, y);
             } else {
-                ctx.lineTo(line.x, line.y);
+                ctx.lineTo(x, y);
             }
             
             ctx.strokeStyle = line.color;
+            ctx.lineWidth = line.size;
             ctx.globalCompositeOperation = line.operation || 'source-over'; // Use the saved compositing mode
             ctx.stroke();
         });
@@ -199,3 +200,14 @@ canvas.addEventListener('mouseup', () => {
 canvas.addEventListener('mouseleave', () => {
     drawing = false;
 });
+
+document.querySelectorAll('.size-picker').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.size-picker').forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+        const size = button.getAttribute('data-size');
+        ctx.lineWidth = size;
+    });
+});
+
+ctx.lineWidth = 10; // Default brush size

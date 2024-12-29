@@ -234,7 +234,11 @@ button {
     } */
 }
 
-
+/* styles for the selected size picker button */
+.size-picker.selected {
+  border: 2px solid #000;
+  border-radius: 50%;
+}
  
   /* styles for mobile devices 
 @media only screen and (max-width: 767px) {
