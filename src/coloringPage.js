@@ -21,8 +21,10 @@ function changeColor(color) {
 
 colorButtons.forEach(button => {
     button.addEventListener('click', () => {
-    const color = button.getAttribute('data-color');
-     changeColor(color);
+        const color = button.getAttribute('data-color');
+        changeColor(color);
+        colorButtons.forEach(btn => btn.classList.remove('button-active'));
+        button.classList.add('button-active');
     });
 });
 
