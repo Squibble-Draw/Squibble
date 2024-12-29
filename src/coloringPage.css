@@ -21,8 +21,7 @@ body {
     bottom: 0;
 }
 
-.bottom-icons,
-.icons {
+.bottom-icons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,11 +38,17 @@ body {
     transition: transorm .3s, box-shadow .3s;
 }
 
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .icons button {
     margin: 0 30px;
     border: none;
     background: none;
-    padding: 10px;
     cursor: pointer;
     transition: transorm .3s, box-shadow .3s;
 }
@@ -52,7 +57,6 @@ body {
     width: 50px;
     height: 125px
 }
-
 
 .bottom-icons button:hover {
     transform: scale(1.1);
@@ -117,14 +121,17 @@ body {
 }
 
 button {
-    padding: 10px 20px;
     margin: 0 10px;
-    font-size: 16px;
     cursor: pointer;
     border: 1px solid #ccc;
     background-color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.zoom{
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -156,12 +163,6 @@ button {
 
 /* Tablet view (iPad Mini)*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    body {
-        font-size: 14px;
-        width: 90%;
-        margin: auto;
-    }
-
     .icons button {
         transition: transform 0.3s, box-shadow 0.3s;
     }

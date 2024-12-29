@@ -11,21 +11,25 @@
   <body>
     <!--ADD ICONS-->
     <div class="icons">
-      <button class="icon-button" data-icon="undo" id="undo">
-        <img src="public/icons/undo.png" alt="undo" />
-      </button>
-      <button class="icon-button" data-icon="redo" id="redo">
-        <img src="public/icons/redo.png" alt="redo" />
-      </button>
       <button class="icon-button" data-icon="home" id="home">
         <img src="public/icons/home.png" alt="home" />
       </button>
-      <button class="zoom_in-icon" data-icon="zoom_in" id="zoom_in">
-        <img src="public/icons/red zoom in_00000.png" alt="zoom_in" />
-      </button>
-      <button class="zoom_out-icon" data-icon="zoom_out" id="zoom_out">
-        <img src="public/icons/red zoom out_00000.png" alt="zoom_out" />
-      </button>
+      <div class="undo-redo">
+        <button class="icon-button" data-icon="undo" id="undo">
+          <img src="public/icons/undo.png" alt="undo" />
+        </button>
+        <button class="icon-button" data-icon="redo" id="redo">
+          <img src="public/icons/redo.png" alt="redo" />
+        </button>
+      </div>
+      <div class="zoom">
+        <button class="zoom_in-icon" data-icon="zoom_in" id="zoom_in">
+          <img src="public/icons/red zoom in_00000.png" alt="zoom_in" />
+        </button>
+        <button class="zoom_out-icon" data-icon="zoom_out" id="zoom_out">
+          <img src="public/icons/red zoom out_00000.png" alt="zoom_out" />
+        </button>
+      </div>
     </div>
 
     <div class="image-container">
@@ -70,21 +74,48 @@
       <button class="color-picker" data-color="pink">
         <img src="public/pens/pink.png" alt="Pink" />
       </button>
-      <button class="size-picker" data-size="5" style="margin: 5px;">
-        <div class="circle" style="width: 5px; height: 5px; background-color: black;"></div>
+      <button class="size-picker" data-size="5" style="margin: 5px">
+        <div
+          class="circle"
+          style="width: 5px; height: 5px; background-color: black"
+        ></div>
       </button>
-      <button class="size-picker selected" data-size="10" style="margin: 5px;">
-        <div class="circle" style="width: 10px; height: 10px; background-color: black;"></div>
+      <button class="size-picker selected" data-size="10" style="margin: 5px">
+        <div
+          class="circle"
+          style="width: 10px; height: 10px; background-color: black"
+        ></div>
       </button>
-      <button class="size-picker" data-size="15" style="margin: 5px;">
-        <div class="circle" style="width: 15px; height: 15px; background-color: black;"></div>
+      <button class="size-picker" data-size="15" style="margin: 5px">
+        <div
+          class="circle"
+          style="width: 15px; height: 15px; background-color: black"
+        ></div>
       </button>
-      <button class="size-picker" data-size="20" style="margin: 5px;">
-        <div class="circle" style="width: 20px; height: 20px; background-color: black;"></div>
+      <button class="size-picker" data-size="20" style="margin: 5px">
+        <div
+          class="circle"
+          style="width: 20px; height: 20px; background-color: black"
+        ></div>
       </button>
-      <button class="size-picker" data-size="25" style="margin: 5px;">
-        <div class="circle" style="width: 25px; height: 25px; background-color: black;"></div>
+      <button class="size-picker" data-size="25" style="margin: 5px">
+        <div
+          class="circle"
+          style="width: 25px; height: 25px; background-color: black"
+        ></div>
       </button>
     </div>
   </body>
 </html>
+
+<!-- <header>
+  <button class="home-icon"></button>
+  <div class="undo-redo">
+    <button class="undo-icon"></button>
+    <button class="redo-icon"></button>
+  </div>
+  <div class="zoom">
+    <button class="zoom-in-icon"></button>
+    <button class="zoom-out-icon"></button>
+  </div>
+</header> -->
