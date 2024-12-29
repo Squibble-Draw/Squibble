@@ -58,7 +58,8 @@ body {
     height: 125px
 }
 
-.bottom-icons button:hover {
+
+.bottom-icons button:hover, .icons button:hover, .button-active {
     transform: scale(1.1);
     box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
     font-weight: bold;
@@ -76,12 +77,6 @@ body {
 .bottom-icons .icon-button img {
     width: 62px;
     height: 80px
-}
-
-.icons button:hover {
-    transform: scale(1.1);
-    box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
 }
 
 .eraser-icon img,
@@ -134,6 +129,12 @@ button {
     flex-direction: column;
 }
 
+/* styles for the selected size picker button */
+.size-picker.selected {
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
 @media only screen and (min-width: 1025px) {
     #zoom_out {
         position: absolute;
@@ -152,13 +153,6 @@ button {
     bottom: 3%;
     left: 5%;
 } */
-
-    /* styles for the selected size picker button */
-    .size-picker.selected {
-        border: 2px solid #000;
-        border-radius: 50%;
-    }
-
 }
 
 /* Tablet view (iPad Mini)*/
@@ -169,18 +163,6 @@ button {
 
     .bottom-icons button {
         transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .bottom-icons button:hover {
-        transform: scale(1.1);
-        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
-        font-weight: bold;
-    }
-
-    .icons button:hover {
-        transform: scale(1.1);
-        box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
-        font-weight: bold;
     }
 
     .icons button img {
