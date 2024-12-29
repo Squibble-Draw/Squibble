@@ -138,7 +138,7 @@ button {
 #zoom_out {
     position: absolute;
     right: 0%;
-    bottom: 79%;
+    bottom: 70%;
 }
 
 /* #redo{
@@ -183,12 +183,12 @@ button {
 
     .icons button img{
         width: 62px; 
-        height: 80px;
+        height: 85px;
     }
 
     .bottom-icons button img {
         width: 60px; 
-        height: 123px;
+        height: 125px;
     }
 
     /*.eraser-icon
