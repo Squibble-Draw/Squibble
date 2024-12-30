@@ -25,8 +25,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-    /* temporary fix so you can select the pencils properly */
 }
 
 .bottom-icons button {
@@ -168,11 +166,6 @@ button {
     .icons button img {
         width: 62px;
         height: 85px;
-    }
-
-    .bottom-icons button img {
-        width: 60px;
-        height: 125px;
     }
 
     /*.eraser-icon
