@@ -40,9 +40,11 @@ body {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
+  gap: 2rem;
   height: 100%;
   transform: scale(0.8);
 }
+
 .drawing {
   background: white;
   border-radius: 10%;
@@ -77,8 +79,14 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 720px) {
   .drawings a {
-    width: 68%;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .drawings a {
+    width: 60%;
   }
 }
